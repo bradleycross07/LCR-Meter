@@ -1,0 +1,20 @@
+# normalise line endings
+* text=auto
+
+# always LF tools break on CRLF
+*.sh      text eol=lf
+Makefile  text eol=lf
+*.mk      text eol=lf
+
+# windows-only scripts
+*.bat     text eol=crlf
+
+# binary files never diff or merge
+*.png   binary
+*.jpg   binary
+*.pdf   binary
+*.f3d   binary
+*.f3z   binary
+*.stl   binary
+*.step  binary
+*.zip   binary

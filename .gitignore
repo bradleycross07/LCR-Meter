@@ -1,0 +1,29 @@
+# firmware build output
+firmware/build/
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+
+# STM32CubeIDE build folders
+firmware/Debug/
+firmware/Release/
+.metadata/
+
+# clangd
+compile_commands.json
+.cache/
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# os junk
+.DS_Store
+Thumbs.db
+desktop.ini
