@@ -1,3 +1,3 @@
-## Aestrum Electronics
+# Aestrum Electronics
 
-A affordable & low-cost LCR meter for educational purposes.
+An affordable & low-cost LCR meter for educational purposes.
