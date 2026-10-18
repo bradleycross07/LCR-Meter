@@ -1,2 +1,2 @@
 # hardware
-Schematics, PCB designs and schematics
+schematics and PCB designs
