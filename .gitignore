@@ -1,17 +1,25 @@
-# firmware build output
-firmware/build/
+# STM32CubeIDE build output (any project folder)
+Debug/
+Release/
 *.o
 *.d
+*.su
+*.cyclo
 *.elf
 *.hex
 *.bin
 *.map
+*.list
 *.lst
 
-# STM32CubeIDE build folders
-firmware/Debug/
-firmware/Release/
+# CMake builds
+build/
+
+# STM32CubeIDE / Eclipse per-user files
+# (keep .project, .cproject, .mxproject and the .ioc: they define the project)
 .metadata/
+.settings/language.settings.xml
+*.launch
 
 # clangd
 compile_commands.json
