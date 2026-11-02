@@ -1,20 +1,25 @@
-# normalise line endings
+# Normalise line endings: stored as LF in the repo, checked out natively
+# (CRLF on Windows, LF on Linux/macOS).
 * text=auto
 
-# always LF tools break on CRLF
+# Always LF: these tools break on CRLF
 *.sh      text eol=lf
 Makefile  text eol=lf
 *.mk      text eol=lf
 
-# windows-only scripts
+# Windows-only scripts
 *.bat     text eol=crlf
 
-# binary files never diff or merge
+# Binary files: never diff or merge
 *.png   binary
 *.jpg   binary
 *.pdf   binary
+*.zip   binary
+*.elf   binary
 *.f3d   binary
 *.f3z   binary
 *.stl   binary
 *.step  binary
-*.zip   binary
+*.stp   binary
+*.xlsx  binary
+*.docx  binary
