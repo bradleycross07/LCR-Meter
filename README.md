@@ -35,11 +35,9 @@ impedance and converts it to R, C or L. The test frequency (100 Hz, 1 kHz or
 
 ## Repository layout
 
-| Folder                     | Contents                                         |
-| -------------------------- | ------------------------------------------------ |
-| [`firmware/`](firmware/)   | STM32CubeIDE project for the meter's firmware    |
-| [`hardware/`](hardware/)   | Schematics, simulations and PCB design files     |
-| [`enclosure/`](enclosure/) | Fusion 360 enclosure designs and exports         |
+| Folder                   | Contents                                      |
+| ------------------------ | --------------------------------------------- |
+| [`firmware/`](firmware/) | STM32CubeIDE project for the meter's firmware |
 
 Meeting minutes, weekly progress reports, the test plan and the group reports
 live in the shared Google Drive, not in this repository.

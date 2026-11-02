@@ -82,7 +82,7 @@ fixed in the `.ioc`.
 
 ## Coding conventions
 
-- C11, 4-space indentation, no tabs.
+- C11.
 - Fixed-width integer types (`uint32_t` etc.) from `<stdint.h>`.
 - No magic numbers: use named `#define`s or `const`s.
 - Use `snprintf`, never `sprintf`.
