@@ -18,7 +18,7 @@ build/
 # STM32CubeIDE / Eclipse per-user files
 # (keep .project, .cproject, .mxproject and the .ioc: they define the project)
 .metadata/
-.settings/language.settings.xml
+**/.settings/language.settings.xml
 *.launch
 
 # clangd
