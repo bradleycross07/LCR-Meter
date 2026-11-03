@@ -9,9 +9,6 @@ resistance, capacitance and inductance and shows the result on a 16×2 LCD.
 | ------------------------ | --------------------------------------------- |
 | [`firmware/`](firmware/) | STM32CubeIDE project for the meter's firmware |
 
-Meeting minutes, progress reports, the test plan and the group reports live
-in the shared Google Drive, not in this repository.
-
 ## Contributing
 
 All changes go through a pull request into `main` and must be reviewed before
