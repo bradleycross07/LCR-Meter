@@ -10,13 +10,11 @@ every change is reviewed before it reaches `main`.
 
    Name it in the format `<area>/<short-description>`, where area is
    `firmware`, `hardware`, `enclosure` or `docs`, e.g. `firmware/lcd-driver`.
-3. Commit small steps, and briefly explain what you've done in each commit
-   message.
+3. Commit in small important changes, and briefly explain what you've done in each commit
+   message. i.e. `git commit -m "fix: fixed a bug on line X"` (remember to do `"git add ."` beforehand.)
 4. Push the branch: `git push -u origin <branch-name>`
-5. Open a pull request into `main` on GitHub and fill in the template.
-6. Get at least **one approving review**, then merge.
-
-Never push directly to `main`.
+5. Open a pull request into `main` on GitHub and fill in the template I made.
+6. Get at least one approving review, then merge. `main` has branch protection so it has to have a reviewer.
 
 ## Reviews
 
@@ -26,10 +24,10 @@ Never push directly to `main`.
 | Hardware   | Juncheng (Hardware Leader)                      |
 | Enclosure  | Raisa (Mechanical Design Leader)                |
 
-Reviewers should check that the change builds, does what the PR says, and is
-readable and commented. Leave comments on GitHub; the author resolves them.
+Reviewers should check that the change builds, and is readable and commented.
+Leave comments on GitHub; the author resolves them.
 
 ## Line endings
 
-`.gitattributes` normalises line endings, so Windows and Linux users can work
+`.gitattributes` normalises line endings, so Windows and Linux can work
 on the same files.
