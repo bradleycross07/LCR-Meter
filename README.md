@@ -29,6 +29,7 @@ impedance and converts it to R, C or L. The test frequency (100 Hz, 1 kHz or
 | Resistance  | 10 Ω – 1 MΩ      | ±5 %     |
 | Capacitance | 1 nF – 100 µF    | ±5 %     |
 | Inductance  | 1 mH – 1 H       | ±10 %    |
+
 Firmware for Aestrum Electronics' low-cost LCR meter, which measures
 resistance, capacitance and inductance and shows the result on a 16×2 LCD.
 
