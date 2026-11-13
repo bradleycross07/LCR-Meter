@@ -23,10 +23,11 @@ STM32CubeIDE and STM32CubeMX are seperate now, so download & install them from t
 1. First, make a folder anywhere on your desktop name it something like "Electronics-Project" (it's better without spaces).
 2. Open the `Terminal` then change directory into the newly created folder it could be something like `cd ~/Desktop/Electronics-Project`
 3. Run this in the terminal (copy and paste) - `git clone https://github.com/bradleycross07/LCR-Meter.git` 
-4. In STM32CubeIDE: File → Open Projects from File System… and select the
+4. It'll make a new folder you can check this in your terminal right now by just typing `ls` (meaning list) and then run `cd LCR-Meter` (pressing `Tab` after `cd` automatically detects `LCR-Meter`) making it easy. And for peace of mind run `git pull` to make sure it's up to date anyways.
+5. In STM32CubeIDE: File → Open Projects from File System... and select the
    `firmware/LCR-Meter/` folder inside `Electronics-Project/LCR-Meter`. It is opened in place; nothing is copied into
    your workspace. Keep your workspace folder outside the repository.
-5. Build with **Project → Build Project**, then run or debug on the Nucleo
+6. Build with **Project → Build Project**, then run or debug on the Nucleo
    board over USB.
 
 To change pins, clocks or peripherals: open `firmware/LCR-Meter/LCR-Meter.ioc`
