@@ -1,12 +1,11 @@
 # firmware
 
-STM32CubeIDE project for the LCR meter, targeting the **NUCLEO-G071RB**
-(STM32G071RB, Arm Cortex-M0+).
+STM32CubeIDE project for the LCR meter, targeting the NUCLEO-G071RB micro-controller.
 
 ## Toolchain
 
-Everyone should use the **same versions**, otherwise CubeMX regenerates files
-differently and pull requests fill up with noise.
+Everyone should use the same version, otherwise CubeMX regenerates different files and
+pull requests fill up with unnecessary noise.
 
 | Tool                       | Version                |
 | -------------------------- | ---------------------- |
@@ -14,28 +13,27 @@ differently and pull requests fill up with noise.
 | STM32CubeMX                | 6.18                   |
 | STM32Cube FW_G0 package    | V1.6.3                 |
 
-Since STM32CubeIDE 2.0, CubeMX is **no longer built into CubeIDE**: install
-both. The project is pinned to FW_G0 V1.6.3 (*"Use latest available"* is
-unticked in Project Manager), so don't upgrade it without agreeing as a group.
+STM32CubeIDE and STM32CubeMX are seperate now, so download & install them from the website at two different places.
+
+[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html#section-get-software-table)
+[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html#section-get-software-table)
 
 ## Getting started
 
-1. Clone the repository.
-2. In STM32CubeIDE: **File → Open Projects from File System…** and select the
-   `firmware/LCR-Meter/` folder. It is opened in place; nothing is copied into
+1. First, make a folder anywhere on your desktop name it something like "Electronics-Project" (it's better without spaces).
+2. Open the `Terminal` then change directory into the newly created folder it could be something like `cd ~/Desktop/Electronics-Project`
+3. Run this in the terminal (copy and paste) - `git clone https://github.com/bradleycross07/LCR-Meter.git` 
+4. In STM32CubeIDE: File → Open Projects from File System… and select the
+   `firmware/LCR-Meter/` folder inside `Electronics-Project/LCR-Meter`. It is opened in place; nothing is copied into
    your workspace. Keep your workspace folder outside the repository.
-3. Build with **Project → Build Project**, then run or debug on the Nucleo
+5. Build with **Project → Build Project**, then run or debug on the Nucleo
    board over USB.
 
 To change pins, clocks or peripherals: open `firmware/LCR-Meter/LCR-Meter.ioc`
-in **standalone STM32CubeMX**, make the change, click **GENERATE CODE**, then
-in CubeIDE right-click the project and **Refresh** (F5). CubeIDE doesn't notice
-regenerated files on its own.
+in standalone STM32CubeMX, make the change, click **GENERATE CODE**, then
+in CubeIDE right-click the project press F5 on your keyboard.
 
-The board's virtual COM port (USART2) is used for debug output. Any serial
-terminal works (CubeIDE's built-in terminal, PuTTY, CoolTerm, `screen`, etc.).
-
-## Layout
+## Proposed Layout
 
 ```
 firmware/
@@ -51,7 +49,7 @@ firmware/
 
 Our own code goes in `Core/Src` and `Core/Inc`, one `.c`/`.h` pair per module.
 
-## Rules for CubeMX-generated code
+## Rules for CubeMX-generated code (copied from Dave's 'Getting Started' book)
 
 - Only edit generated files **between** `/* USER CODE BEGIN */` and
   `/* USER CODE END */` comments. Anything outside them is overwritten when the
@@ -65,13 +63,11 @@ Our own code goes in `Core/Src` and `Core/Inc`, one `.c`/`.h` pair per module.
 
 ## Clock
 
-SYSCLK and HCLK = **64 MHz** (the G071's maximum), from the internal 16 MHz
-HSI oscillator through the PLL (÷1, ×8, ÷2). AHB and APB prescalers are ÷1.
+Set SYSCLK to 64 MHz (that's the board's maximum) in STM32CubeMX, it'll set everything else to 64 MHz. 
 
 ## Pin assignments
 
-Record every pin here once it is fixed in the `.ioc`. Pins for the AD9833,
-LCD, buttons and ADC inputs are still to be agreed with the hardware leader.
+Record every pin here once it is fixed in the `.ioc`. Pins are still decided once the PCB is fully made.
 
 | Pin        | Function               | Notes                                        |
 | ---------- | ---------------------- | -------------------------------------------- |

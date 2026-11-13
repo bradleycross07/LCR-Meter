@@ -22,7 +22,7 @@ impedance and converts it to R, C or L. The test frequency (100 Hz, 1 kHz or
 | Power              | AA battery (hopefully) or micro-usb cable                    |
 | Firmware           | C, STM32CubeIDE / STM32CubeMX, HAL                           |
 
-### Target performance (provisional – to be confirmed by testing)
+### Target performance
 
 | Component   | Range            | Accuracy |
 | ----------- | ---------------- | -------- |
