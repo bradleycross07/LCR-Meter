@@ -11,7 +11,7 @@ every change is reviewed before it reaches `main`.
    Name it in the format `<area>/<short-description>`, where area is
    `firmware`, `hardware`, `enclosure` or `docs`, e.g. `firmware/lcd-driver`.
 3. Commit in small important changes, and briefly explain what you've done in each commit
-   message. i.e. `git commit -m "fix: fixed a bug on line X"` (remember to do `"git add ."` beforehand.)
+   message. i.e. `git commit -m "fix: fixed a bug on line X"` (remember to do `git add .` beforehand.)
 4. Push the branch: `git push -u origin <branch-name>`
 5. Open a pull request into `main` on GitHub and fill in the template I made.
 6. Get at least one approving review, then merge. `main` has branch protection so it has to have a reviewer.

@@ -1,12 +1,9 @@
 # Aestrum Electronics – LCR Meter
 
-A low-cost LCR (component) meter for secondary-school electronics, designed by
-**Aestrum Electronics** (Group B5) for the University of York module
-**ELE00061I Electronics Project 2** (2026/27), in response to the
-*Electronics in Schools* Call to Tender (ref. UKG/DE/ESI/TG/2026/06).
+A low-cost LCR meter for secondary-school electronics, designed by
+Aestrum Electronics, in response to the Electronics in Schools Call to Tender (ref. UKG/DE/ESI/TG/2026/06).
 
-The meter measures resistance, capacitance and inductance and shows the
-result on a 16×2 LCD.
+The meter measures resistance, capacitance and inductance and shows the result on a 16×2 LCD.
 
 ## How it works (overview)
 
@@ -18,11 +15,11 @@ impedance and converts it to R, C or L. The test frequency (100 Hz, 1 kHz or
 
 | Subsystem          | Part / approach                                              |
 | ------------------ | ------------------------------------------------------------ |
-| Microcontroller    | NUCLEO-G071RB (STM32G071RB) for the prototype                |
+| Microcontroller    | NUCLEO-G071RB (STM32G071RB)                                  |
 | Signal generation  | AD9833 DDS, 100 Hz / 1 kHz / 10 kHz                          |
 | Analogue front end | MCP6004 quad op-amp buffers                                  |
-| Display / controls | 16×2 LCD, *Mode* (R/C/L) and *Hold* buttons, terminal block |
-| Power              | USB via the Nucleo (prototype); 2×AA (production)            |
+| Display / controls | 16×2 LCD, hold buttons and terminal block                    |
+| Power              | AA battery (hopefully) or micro-usb cable                    |
 | Firmware           | C, STM32CubeIDE / STM32CubeMX, HAL                           |
 
 ### Target performance (provisional – to be confirmed by testing)
@@ -37,10 +34,7 @@ impedance and converts it to R, C or L. The test frequency (100 Hz, 1 kHz or
 
 | Folder                   | Contents                                      |
 | ------------------------ | --------------------------------------------- |
-| [`firmware/`](firmware/) | STM32CubeIDE project for the meter's firmware |
-
-Meeting minutes, weekly progress reports, the test plan and the group reports
-live in the shared Google Drive, not in this repository.
+| [`firmware/`](firmware/) | STM32CubeIDE project for the LCR's firmware   |
 
 ## Team
 
