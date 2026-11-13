@@ -29,26 +29,16 @@ impedance and converts it to R, C or L. The test frequency (100 Hz, 1 kHz or
 | Resistance  | 10 Ω – 1 MΩ      | ±5 %     |
 | Capacitance | 1 nF – 100 µF    | ±5 %     |
 | Inductance  | 1 mH – 1 H       | ±10 %    |
+Firmware for Aestrum Electronics' low-cost LCR meter, which measures
+resistance, capacitance and inductance and shows the result on a 16×2 LCD.
 
 ## Repository layout
 
 | Folder                   | Contents                                      |
 | ------------------------ | --------------------------------------------- |
-| [`firmware/`](firmware/) | STM32CubeIDE project for the LCR's firmware   |
-
-## Team
-
-| Member    | Roles                                                  |
-| --------- | ------------------------------------------------------ |
-| Mackenzie | Documentation Leader, Test Leader                      |
-| Juncheng  | Hardware Leader, PCB Design Leader                     |
-| Raisa     | User Interface Programming Leader, Mechanical Design Leader |
-| Tabiso    | Application Leader, Team Leader                        |
-| Bradley   | Software Version Controller, Embedded Programming Leader |
-| Douman    | Marketing Leader, Production / Sustainability Leader   |
+| [`firmware/`](firmware/) | STM32CubeIDE project for the meter's firmware |
 
 ## Contributing
 
 All changes go through a pull request into `main` and must be reviewed before
-merging. See [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming, commit
-messages and the review process.
+merging. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow.
