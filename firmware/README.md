@@ -16,6 +16,7 @@ pull requests fill up with unnecessary noise.
 STM32CubeIDE and STM32CubeMX are seperate now, so download & install them from the website at two different places.
 
 [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html#section-get-software-table)
+
 [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html#section-get-software-table)
 
 ## Getting started
@@ -78,7 +79,7 @@ Record every pin here once it is fixed in the `.ioc`. Pins are still decided onc
 | PC14 / PC15| LSE 32.768 kHz crystal | On the Nucleo board                          |
 | PF0        | MCO input              | 8 MHz clock from the ST-LINK                 |
 
-## Coding conventions
+## Coding conventions (grabbed from Dave's 'Getting Started' book)
 
 - C11 (CubeIDE compiles with `-std=gnu11`).
 - Fixed-width integer types (`uint32_t` etc.) from `<stdint.h>`.

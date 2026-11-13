@@ -15,6 +15,8 @@ every change is reviewed before it reaches `main`.
 4. Push the branch: `git push -u origin <branch-name>`
 5. Open a pull request into `main` on GitHub and fill in the template I made.
 6. Get at least one approving review, then merge. `main` has branch protection so it has to have a reviewer.
+7. Finally, you can locally delete that said branch if you think it's not needed by doing `git branch -D <branch-name>` and
+   you can delete it from the remote repository by doing `git push --delete origin <branch-name>` to tidy things up.
 
 ## Reviews
 
