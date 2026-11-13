@@ -33,7 +33,7 @@ STM32CubeIDE and STM32CubeMX are seperate now, so download & install them from t
 
 To change pins, clocks or peripherals: open `firmware/LCR-Meter/LCR-Meter.ioc`
 in standalone STM32CubeMX, make the change, click **GENERATE CODE**, then
-in CubeIDE right-click the project press F5 on your keyboard.
+press F5 on your keyboard to refresh.
 
 ## Proposed Layout
 
