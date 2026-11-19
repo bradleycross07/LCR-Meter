@@ -54,5 +54,17 @@ int main(void)
 
     printf("resistor: r = %f, x = %f\n", z.r, z.x);
 
+    uint16_t cap[2 * N];
+    for (uint32_t i = 0; i < N; i++) {
+	cap[2 * i]         = (uint16_t)(OFFSET + 1000.0f * cosf(TWO_PI * i / M));
+	cap[2 * i + 1]     = (uint16_t)(OFFSET + 295.3f * cosf(TWO_PI * i / M - PI / 2));
+    }
+
+    phasor_t c_in  = phasor_from_samples(cap,     N, 2, M);
+    phasor_t c_out = phasor_from_samples(&cap[1], N, 2, M);
+    impedance_t zc = impedance_from_phasors(c_in, c_out, 1000.0f);
+
+    printf("capacitors: C = %e F\n", capacitance_from_z(zc, 1000.0f));
+
     return 0;
 }
