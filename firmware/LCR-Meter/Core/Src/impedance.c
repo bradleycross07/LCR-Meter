@@ -30,3 +30,15 @@ impedance_t impedance_from_phasors(phasor_t v_in, phasor_t v_out, float r_f)
    
    return result;
 }
+
+float capacitance_from_z(impedance_t z, float freq)
+{
+   float omega = TWO_PI * freq;  /* angular freq in rad/s */
+   return -1.0f / (omega * z.x); /* C = -1 / (w * X) */
+}
+
+float inductance_from_z(impedance_t z, float freq)
+{
+  float omega = TWO_PI * freq;
+  return z.x / omega; /* L = X / w */
+}
