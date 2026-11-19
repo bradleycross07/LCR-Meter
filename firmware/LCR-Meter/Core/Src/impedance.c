@@ -18,3 +18,15 @@ phasor_t phasor_from_samples(const uint16_t *samples, uint32_t n, uint32_t strid
     result.im = sum_im * 2 / n;
     return result;
 }
+
+impedance_t impedance_from_phasors(phasor_t v_in, phasor_t v_out, float r_f)
+{
+   impedance_t result = {0.0f, 0.0f}; /* result being 'z' */
+   
+   float denom = v_out.re * v_out.re + v_out.im * v_out.im;
+   
+   result.r = -r_f * (v_in.re * v_out.re + v_in.im * v_out.im) / denom;
+   result.x = -r_f * (v_in.im * v_out.re - v_in.re * v_out.im) / denom;
+   
+   return result;
+}
