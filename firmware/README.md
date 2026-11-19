@@ -1,6 +1,6 @@
 # firmware
 
-STM32CubeIDE project for the LCR meter, targeting the NUCLEO-G071RB micro-controller.
+STM32CubeIDE project for the LCR meter, targeting the NUCLEO-G071RB microcontroller.
 
 ## Toolchain
 
@@ -13,7 +13,7 @@ pull requests fill up with unnecessary noise.
 | STM32CubeMX                | 6.18                   |
 | STM32Cube FW_G0 package    | V1.6.3                 |
 
-STM32CubeIDE and STM32CubeMX are seperate now, so download & install them from the website at two different places.
+STM32CubeIDE and STM32CubeMX are separate now, so download & install them from the website at two different places.
 
 [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html#section-get-software-table)
 
