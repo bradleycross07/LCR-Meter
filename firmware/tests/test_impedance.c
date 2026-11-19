@@ -3,12 +3,13 @@
 #include <math.h>
 #include "impedance.h"
 
+#define PI	    3.14159265f
 #define TWO_PI      6.28318531f
-#define N           64      /* number of samples */
-#define M           16      /* samples per cycle (so 4 cycles) */
-#define OFFSET      2048.0f /* mid-scale of the 12-bit ADC */
+#define N           64      	/* number of samples */
+#define M           16      	/* samples per cycle (so 4 cycles) */
+#define OFFSET      2048.0f 	/* mid-scale of the 12-bit ADC */
 #define AMPLITUDE   1000.0f
-#define PHASE  	    0.5236f /* 30 degrees, in radians */
+#define PHASE  	    0.5236f 	/* 30 degrees, in radians */
 
 static void print_phasor(const char *name, phasor_t p)
 {
@@ -41,5 +42,17 @@ int main(void)
     print_phasor("A", a);
     print_phasor("B", b);
     
+    uint16_t res[2 * N];
+    for (uint32_t i = 0; i < N; i++) {
+	res[2 * i]     = (uint16_t)(OFFSET + 1000.0f * cosf(TWO_PI * i / M));
+	res[2 * i + 1] = (uint16_t)(OFFSET + 500.0f  * cosf(TWO_PI * i / M + PI)); 
+    }
+
+    phasor_t v_in  = phasor_from_samples(res,     N, 2, M);
+    phasor_t v_out = phasor_from_samples(&res[1], N, 2, M);
+    impedance_t z  = impedance_from_phasors(v_in, v_out, 1000.0f);
+
+    printf("resistor: r = %f, x = %f\n", z.r, z.x);
+
     return 0;
 }
