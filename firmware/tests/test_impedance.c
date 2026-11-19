@@ -42,7 +42,7 @@ int main(void)
     print_phasor("A", a);
     print_phasor("B", b);
     
-    uint16_t res[2 * N];
+    uint16_t res[2 * N]; /* resistor */
     for (uint32_t i = 0; i < N; i++) {
 	res[2 * i]     = (uint16_t)(OFFSET + 1000.0f * cosf(TWO_PI * i / M));
 	res[2 * i + 1] = (uint16_t)(OFFSET + 500.0f  * cosf(TWO_PI * i / M + PI)); 
@@ -54,7 +54,7 @@ int main(void)
 
     printf("resistor: r = %f, x = %f\n", z.r, z.x);
 
-    uint16_t cap[2 * N];
+    uint16_t cap[2 * N]; /* capacitor */
     for (uint32_t i = 0; i < N; i++) {
 	cap[2 * i]         = (uint16_t)(OFFSET + 1000.0f * cosf(TWO_PI * i / M));
 	cap[2 * i + 1]     = (uint16_t)(OFFSET + 295.3f * cosf(TWO_PI * i / M - PI / 2));
@@ -66,5 +66,17 @@ int main(void)
 
     printf("capacitors: C = %e F\n", capacitance_from_z(zc, 1000.0f));
 
+    uint16_t ind[2 * N]; /* inductor */
+    for (uint32_t i = 0; i < N; i++) {
+	ind[2 * i]         = (uint16_t)(OFFSET + 1000.0f * cosf(TWO_PI * i / M));
+	ind[2 * i + 1]     = (uint16_t)(OFFSET + 1591.5f * cosf(TWO_PI * i / M + PI / 2));
+    }
+
+    phasor_t i_in  = phasor_from_samples(ind,     N, 2, M);
+    phasor_t i_out = phasor_from_samples(&ind[1], N, 2, M);
+    impedance_t zi = impedance_from_phasors(i_in, i_out, 1000.0f);
+
+    printf("inductors: L = %e H\n", inductance_from_z(zi, 1000.0f));
+    
     return 0;
 }
