@@ -1,5 +1,9 @@
 /* lcd.c */
 
+/* HD44780 16x2 LCD driver, 4-bit mode, write-only.
+   start-up sequence and command values follow D. Pearce's
+   DAJP_G431KB_Drivers.c (MIT licence), rewritten for HAL. */
+
 /* includes */
 #include "lcd.h"
 #include "main.h"
@@ -15,6 +19,8 @@
 #define LCD_CMD_DISPLAY_ON 0x0C /* display on, cursor off, no blink */
 #define LCD_CMD_FUNC_SET 0x28 /* 4-bit mode, 2 lines, 5x8 font */
 #define LCD_CMD_SET_ADDR 0x80 /* set cursor position */
+
+#define LCD_ROW1_ADDR 0x40 /* address of the first character on row 1 */
 
 /* puts the low 4 bits of nibble onto D4-D7 */
 static void lcd_write_nibble(uint8_t nibble)
@@ -44,6 +50,7 @@ static void lcd_write_byte(uint8_t byte, uint8_t is_data)
 	lcd_pulse_enable();
 }
 
+/* initialise the lcd display */
 void lcd_init(void)
 {
 	HAL_Delay(LCD_POWER_MS); /* let the LCD power up */
@@ -66,4 +73,33 @@ void lcd_init(void)
 	lcd_write_byte(LCD_CMD_CLEAR, 0); /* clear the screen */
 	HAL_Delay(LCD_CLEAR_MS); /* clear is slow so wait for it */
 	lcd_write_byte(LCD_CMD_ENTRY_MODE, 0); /* cursor moves right after each character */
+}
+
+/* clears the screen and moves the cursor to the top left */
+void lcd_clear(void)
+{
+	lcd_write_byte(LCD_CMD_CLEAR, 0); /* command */
+	HAL_Delay(LCD_CLEAR_MS); /* clear is slow */
+}
+
+/* writes one character at the cursor */
+void lcd_write_char(char c)
+{
+	lcd_write_byte((uint8_t)c, 1); /* 1 = data, RS = high */
+}
+
+/* writes a string at the cursor */
+void lcd_write_string(const char *s)
+{
+	while(*s) { /* *s is the current character: \0 ends the loop */
+		lcd_write_char(*s);
+		s++; /* moves to the next character */
+	}
+}
+
+/* moves the cursor: column 0 to 15, row 0 to 1 */
+void lcd_goto(uint8_t col, uint8_t row)
+{
+	uint8_t addr = (row == 0) ? col : (LCD_ROW1_ADDR + col);
+	lcd_write_byte(LCD_CMD_SET_ADDR | addr, 0);
 }

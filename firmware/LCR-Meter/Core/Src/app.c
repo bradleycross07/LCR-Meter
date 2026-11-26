@@ -4,6 +4,7 @@
 #include "app.h"
 #include "main.h"
 #include "debug.h"
+#include "lcd.h"
 
 /* defines */
 #define LED_BLINK_MS    500 /* time between LED toggles, in ms */
@@ -11,6 +12,12 @@
 void app_init(void)
 {
 	debug_print("LCR meter starting\r\n");
+
+	lcd_init();
+	lcd_goto(0, 0);
+	lcd_write_string("LCR meter");
+	lcd_goto(0, 1);
+	lcd_write_string("Aestrum");
 }
 
 void app_run(void)
