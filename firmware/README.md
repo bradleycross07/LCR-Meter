@@ -79,6 +79,12 @@ Record every pin here once it is fixed in the `.ioc`. Pins are still decided onc
 | PC13       | User button (B1)       | Nucleo blue button                           |
 | PC14 / PC15| LSE 32.768 kHz crystal | On the Nucleo board                          |
 | PF0        | MCO input              | 8 MHz clock from the ST-LINK                 |
+| PA10       | `LCD_RS`               | LCD register select (via 74HCT541 buffer)    |
+| PB3        | `LCD_E`                | LCD enable                                   |
+| PB5        | `LCD_D4`               | LCD data bit 4                               |
+| PB4        | `LCD_D5`               | LCD data bit 5                               |
+| PB14       | `LCD_D6`               | LCD data bit 6                               |
+| PA8        | `LCD_D7`               | LCD data bit 7 (LCD R/W is tied to ground)   |
 
 ## Coding conventions (grabbed from Dave's 'Getting Started' book)
 
